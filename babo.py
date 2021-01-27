@@ -1,5 +1,6 @@
 import discord
 import asyncio
+import os
 
 client = discord.Client()
 
@@ -39,8 +40,10 @@ async def on_message(message):
         await message.channel.send("게임방 디스코드 방 : https://discord.gg/SFw3xdT")
         await message.channel.send("트위치 디스코드 방 : https://discord.gg/tEEXa39")
         await message.channel.send("유튜브 디스코드 방 : https://discord.gg/wXTWKws")
-    
-client.run("ODAzNDU4MjgzMTY3NDE2MzMw.YA-E1g.hUMh0aSdVxtBoUNI8sUEwp8az0s")
+        
+
+access_token = os.environ["BOT_TOKEN"]    
+client.run(access_token)
 
 
 
